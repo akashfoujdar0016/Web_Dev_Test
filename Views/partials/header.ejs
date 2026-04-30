@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Train Booking System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="/train" style="font-size: 1.5rem;">Train Booking System</a>
+        </div>
+        <div>
+            <% if(currentUser) { %>
+                <span>Welcome, <%= currentUser.username %>!</span>
+                <a href="/logout" class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;">Logout</a>
+            <% } else { %>
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            <% } %>
+        </div>
+    </nav>
+    <div class="container">
+        <% if(success && success.length > 0) { %>
+            <div class="alert alert-success">
+                <%= success %>
+            </div>
+        <% } %>
+        <% if(error && error.length > 0) { %>
+            <div class="alert alert-error">
+                <%= error %>
+            </div>
+        <% } %>

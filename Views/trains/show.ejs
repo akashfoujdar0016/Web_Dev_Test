@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<div class="train-item" style="max-width: 600px; margin: 20px auto;">
+    <h2><%= train.trainName %> Details</h2>
+    <p><strong>Departure Time:</strong> <%= train.time %></p>
+    <p><strong>Seats Remaining:</strong> <%= train.seatsLeft %></p>
+    <p><strong>Record Created:</strong> <%= new Date(train.createdAt).toLocaleString() %></p>
+    
+    <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 15px;">
+        <a href="/train/<%= train._id %>/edit" class="btn btn-primary">Edit Train</a>
+        
+        <form action="/train/<%= train._id %>/delete" method="POST" style="display:inline; margin-left: 10px;">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this train?')">Delete Train</button>
+        </form>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <a href="/train"><- Back to all trains</a>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

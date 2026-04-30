@@ -1,0 +1,33 @@
+<%- include('./partials/header') %>
+
+<div class="form-container" style="max-width: 500px;">
+    <h2>Registration Form</h2>
+    <form action="/register" method="POST">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="ticketNumber">Ticket Number:</label>
+            <input type="text" id="ticketNumber" name="ticketNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="coaches">Coaches:</label>
+            <input type="text" id="coaches" name="coaches">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Registration</button>
+    </form>
+    <div style="margin-top: 15px; text-align: center;">
+        Already registered? <a href="/login">Login here</a>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>
